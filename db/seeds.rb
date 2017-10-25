@@ -13,5 +13,11 @@ Post.create([
 	{id: 1, message: 'Plata O Plomo', photo: open('http://pbs.twimg.com/media/CO_TUKkWUAAIN4o.jpg'), user_id: 1}
 ])
 Comment.create([
-	{id: 1, message: "Fuckin' gringos!", post_id: 1, user_id: 2,}
+	{id: 1, message: "Fuckin' gringos!", post_id: 1, user_id: 2}
 ])
+Group.create!([
+	{id: 1, groupname: '1st group', user_id: 1},
+	{id: 2, groupname: '2nd group', user_id: 2}
+])
+
+User.find(1).update( group_id: 1)
