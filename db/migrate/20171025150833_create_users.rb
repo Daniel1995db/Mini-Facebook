@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.attachment :photo
       t.string :password
       t.string :position
+      t.references :group, foreign_key: true
 
       t.timestamps
     end
