@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025185306) do
-
-  create_table "admins", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_admins_on_group_id"
-    t.index ["user_id"], name: "index_admins_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 20171025154049) do
 
   create_table "comments", force: :cascade do |t|
     t.string "message"
@@ -47,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171025185306) do
   end
 
   create_table "groups", force: :cascade do |t|
+    t.string "groupname"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,15 +63,16 @@ ActiveRecord::Schema.define(version: 20171025185306) do
     t.string "fname"
     t.string "lname"
     t.string "username"
-    t.string "password"
-    t.string "photo"
-    t.string "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "photo_file_name"
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string "password"
+    t.string "position"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_users_on_group_id"
   end
 
 end
