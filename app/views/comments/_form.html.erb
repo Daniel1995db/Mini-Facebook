@@ -17,9 +17,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :posts_id %>
-    <%= form.text_field :posts_id, id: :comment_posts_id %>
+    <%= form.label :post_id %>
+    <%= form.text_field :posts_id, id: :comment_post_id %>
   </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message, id: :comment_message %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
