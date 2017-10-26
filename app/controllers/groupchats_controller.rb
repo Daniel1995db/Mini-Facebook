@@ -1,5 +1,6 @@
 class GroupchatsController < ApplicationController
   before_action :set_groupchat, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /groupchats
   # GET /groupchats.json
