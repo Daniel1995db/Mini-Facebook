@@ -16,7 +16,7 @@ Comment.create([
 	{id: 1, message: "Fuckin' gringos!", post_id: 1, user_id: 2}
 ])
 Group.create!([
-	{id: 1, groupname: '1st group', user_id: 1},
+	{id: 1, groupname: '1st group'},
 	{id: 2, groupname: '2nd group'}
 ])
 
