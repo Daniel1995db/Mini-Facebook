@@ -1,0 +1,19 @@
+<h1>Search for Friends</h1>
+<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Friends" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Your Are Friends With</h1>
+
+<% @friendships.each do |friendship| %>
+
+	<li><%= link_to (friendship.amigo.fname + ' ' + friendship.amigo.lname), friendship.amigo %></li>
+	
+<% end %>
+
+
+
+

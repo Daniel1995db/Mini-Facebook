@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20171027181019) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "friendships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "amigo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["amigo_id"], name: "index_friendships_on_amigo_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
   create_table "groupchats", force: :cascade do |t|
     t.string "message"
     t.integer "user_id"
@@ -161,7 +170,7 @@ ActiveRecord::Schema.define(version: 20171027181019) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.integer "failed_attempts", default: 0, null: false
+    t.integer "failed_attempts", default: 3, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
     t.index ["email"], name: "index_users_on_email", unique: true
