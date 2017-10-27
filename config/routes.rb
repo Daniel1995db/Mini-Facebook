@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   #only allowed to join and leave a chatroom
 
 
-  resources :conversations do
-    resources :pmessages
+  resources :chatrooms do
+  	resource :chatroom_users
+  	resources :messages
   end
 
   devise_for :users
