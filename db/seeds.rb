@@ -20,5 +20,6 @@ Group.create!([
 	{id: 2, groupname: '2nd group'}
 ])
 
+
 User.find(1).update( group_id: 1)
 User.find(2).update( group_id: 2)
