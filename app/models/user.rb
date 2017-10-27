@@ -3,8 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  acts_as_messageable
+
 	has_many :posts
 	has_many :comments
+  has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
+  has_many :messages
 	has_many :followers, class_name: "Following" #, foreign_key: :follower_id
 	has_many :followees, class_name: "Following" #, foreign_key: :followee_id
 	belongs_to :group, optional: true
