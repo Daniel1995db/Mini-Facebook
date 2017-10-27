@@ -51,16 +51,6 @@ ActiveRecord::Schema.define(version: 20171027181019) do
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
-  create_table "groupchats", force: :cascade do |t|
-    t.string "message"
-    t.integer "user_id"
-    t.integer "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_groupchats_on_group_id"
-    t.index ["user_id"], name: "index_groupchats_on_user_id"
-  end
-
   create_table "groups", force: :cascade do |t|
     t.string "groupname"
     t.integer "user_id"
