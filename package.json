@@ -1,5 +1,7 @@
 {
   "name": "narcos",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "sendbird": "^3.0.42"
+  }
 }
