@@ -1,16 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show] 
+  before_action :authenticate_user!
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = params[:search] ? User.search(params[:search]) : User.all
+    :authenticate_user!
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+  :authenticate_user!
   end
 
   # GET /users/new

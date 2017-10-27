@@ -18,6 +18,14 @@
         <td><%= post.message %></td>
         <td><%= image_tag post.user.photo.url(:medium) %></td>
         <td><%= post.user.username %></td>
+        <td>
+        <div>
+        <p><strong>Comments:</strong></p>
+        <% post.comments.each do |comment| %>
+            <li><%= comment.user.username %>: <%= comment.message %></li>
+        <% end %>
+          <%= render 'comments/form', comment: Comment.new(post_id: post.id) %>
+        </div>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
