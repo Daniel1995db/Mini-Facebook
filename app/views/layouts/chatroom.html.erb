@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Narcos</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render partial: 'home/nav' %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Sign In", new_user_session_path %>
+
+    <div class="fluid-container">
+      <div class="row">
+        <div class="col-sm-2"> 
+          <% if user_signed_in? %>
+            <h5>Chatroom</h5>
+            <ul>
+              <% current_user.chatrooms.each do |chatroom| %>
+                <%= link_to chatroom.name, chatroom %>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>         
+        <div class="col-sm-10 col-sm-offset-2">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
