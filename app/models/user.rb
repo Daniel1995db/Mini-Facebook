@@ -29,5 +29,8 @@ class User < ApplicationRecord
   		where("fname LIKE ? OR lname LIKE ?", "%#{search}%", "%#{search}%") 
   		# where("content LIKE ?", "%#{search}%")
 	end
+	def full_name
+		"#{fname} #{lname}".strip
+	end
 end
 
