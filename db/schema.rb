@@ -125,7 +125,10 @@ ActiveRecord::Schema.define(version: 20171027181019) do
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
-    t.string "photo"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
