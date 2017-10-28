@@ -1,3 +1,24 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com
+
+
+.posts_body_page{
+	margin: auto;
+	width: 900px;
+	.posts_heading{
+		text-align: center;
+	}
+	.username_message_post{
+		width: inherit;
+		display: inline-block;
+		text-align: center;
+	}
+	.comments_post_page_heading{
+		text-align: center;
+	}
+	.customize_post{
+		width: inherit;
+		display: inline-block;
+	}
+}

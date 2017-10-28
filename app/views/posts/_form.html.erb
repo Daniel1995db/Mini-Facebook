@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -18,12 +20,7 @@
 
   <div class="field">
     <%= form.label :photo %>
-    <%= form.text_field :photo, id: :post_photo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :post_user_id %>
+    <%= form.file_field :photo, id: :post_photo %>
   </div>
 
   <div class="actions">

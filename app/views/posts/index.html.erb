@@ -1,39 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="posts_body_page">  
+  <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+  <h1 class="posts_heading">Main Feed</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>Photo</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <% @posts.each do |post| %>
+          <p class="post_image_post_page" style="background-image: url('<%= post.photo.url %>'); background-size: cover; background-position: center; width: 600px; height: 600px; margin: 0px auto 10px auto;""></p>
+          <div class="customize_post">
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+          
+          <div class="username_message_post">
+          <p class="message_post_page"><%= post.user.username %>: <%= post.message %></p>
+          </div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.message %></td>
-        <td><%= image_tag post.user.photo.url(:medium) %></td>
-        <td><%= post.user.username %></td>
-        <td>
-        <div>
-        <p><strong>Comments:</strong></p>
-        <% post.comments.each do |comment| %>
-            <li><%= comment.user.username %>: <%= comment.message %></li>
-        <% end %>
-          <%= render 'comments/form', comment: Comment.new(post_id: post.id) %>
-        </div>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div>
+            <p class="comments_post_page_heading"><strong>Comments:</strong></p>
+            <% post.comments.each do |comment| %>
+                <li><%= comment.user.username %>: <%= comment.message %></li>
+            <% end %>
+              <%= render 'comments/form', comment: Comment.new(post_id: post.id) %>
+          </div>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
 
-<br>
+  <br>
 
-<%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New Post', new_post_path %>
+</div>
