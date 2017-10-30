@@ -1,32 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Fname:</strong>
-  <%= @user.fname %>
-</p>
+<div class="profile_page">
+  <h1><%= @user.full_name %></h1>
 
-<p>
-  <strong>Lname:</strong>
-  <%= @user.lname %>
-</p>
+  <p style="background-image: url('<%= @user.photo %>'); background-size: cover; background-position: center; width: 550px; height: 550px; border-radius: 50%; margin: auto;"></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
 
-<p>
-  <strong>Position:</strong>
-  <%= @user.position %>
-</p>
+  <p>
+    <strong>Position:</strong>
+    <%= @user.position %>
+  </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @user.photo %>
-</p>
 
-<% if current_user %>
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-<% end %>
-  <%= link_to 'Back', users_path %>
+  <% if current_user %>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %> 
+
+    <% @user.posts.each do |post| %>
+      <span style="background-image: url('<%= post.photo.url %>'); background-size: cover; background-position: center;
+      width: 500px; height: 500px;"></span>
+    <% end %>
+
+  <% end %>
+    <%= link_to 'Back', users_path %>
+
+  
+
+</div>
 
