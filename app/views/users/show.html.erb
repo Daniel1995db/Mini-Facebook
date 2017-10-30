@@ -4,7 +4,7 @@
   <h1><%= @user.full_name %></h1>
 
   <p style="background-image: url('<%= @user.photo %>'); background-size: cover; background-position: center; width: 550px; height: 550px; border-radius: 50%; margin: auto;"></p>
-
+  <br>
   <p>
     <strong>Username:</strong>
     <%= @user.username %>
@@ -15,19 +15,21 @@
     <%= @user.position %>
   </p>
 
+  
 
   <% if current_user %>
-    <%= link_to 'Edit Profile', edit_user_path(@user) %> 
-
+    <div class="edit_profile_path"><%= link_to 'Edit Profile', edit_user_path(@user) %></div> 
+    <h3><%= @user.username %>'s Posts</h3>
     <% @user.posts.each do |post| %>
-      <span style="background-image: url('<%= post.photo.url %>'); background-size: cover; background-position: center;
+      <span style="background-image: url('<%= post.photo.url %>'); background-size: cover; background-position: center; display: inline-block;
       width: 500px; height: 500px;"></span>
+      <div class="show_post_path"><%= link_to 'Show Post', post %></div>
     <% end %>
 
   <% end %>
-    <%= link_to 'Back', users_path %>
 
-  
+    <div class="back_page_path" style="display: block; margin: 20px auto; text-align: center;"><%= link_to 'Back', users_path %></div>
+
 
 </div>
 
