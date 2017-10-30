@@ -1,3 +1,38 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile_page{
+	width: 710px;
+	margin: auto;
+	text-align: center;
+}
+.edit_profile_page{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 10px;
+	width: 1000px;
+	margin: 0px auto 25px auto;
+	.edit_message_page{
+		grid-column: 1;
+		text-align: center;
+		.h_fives{
+			font-size: 25px;
+			margin: 20px auto 10px auto;
+		}
+	}
+	.form_edit_page{
+		grid-column: 2;
+		resize: 2em;
+		font-size: 20px;
+		margin-left: 180px;
+		.field{
+			padding: 10px;
+		}
+	}
+}
+#user_position1{
+	input{
+	padding-left: 15px;
+	}
+}

@@ -5,20 +5,82 @@
 
 .posts_body_page{
 	margin: auto;
-	width: 900px;
+	width: 720px;
 	.posts_heading{
 		text-align: center;
+		margin-bottom: 35px;
+		font-size: 50px;
 	}
 	.username_message_post{
 		width: inherit;
 		display: inline-block;
 		text-align: center;
 	}
+	.username_post_page{
+		font-size: 25px;
+		padding-left: 25px;
+	}
 	.comments_post_page_heading{
 		text-align: center;
 	}
+	.message_post_page{
+		font-size: 25px;
+	}
 	.customize_post{
-		width: inherit;
-		display: inline-block;
+		width: 240px;
+		margin-right: 0px;
+		margin-left: auto;
+		a{
+			padding: 0px 5px;
+			text-decoration: none;
+			color: black;
+		}
+		a:hover{
+			color: lightblue;
+		}
+	}
+	.comments_post_page_heading{
+		width: 100px;
+		font-size: 20px;
+		right: 2%;
+	}
+	.comments_post_page{
+		li{
+			list-style: none;
+			width: inherit;
+			display: block;
+		}
+	}
+	.photo_with_comment{
+		display: block;
 	}
 }
+.show_post_page{
+	width: 720px;
+	margin: 0px auto 10px auto;
+.message_show_page{
+	text-align: center;
+	font-size: 25px;
+	}
+.config_options{
+	text-align: right;
+	color: black;
+	a{
+		color: black;
+		text-decoration: none;
+	}
+	a:hover{
+		color: lightblue;
+	}
+}
+}
+.edit_post_page{
+	width: 500px;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+
+

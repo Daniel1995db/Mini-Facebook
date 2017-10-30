@@ -1,33 +1,34 @@
 <div class="posts_body_page">  
   <p id="notice"><%= notice %></p>
+  <%= link_to 'Make a New Post', new_post_path %>
 
   <h1 class="posts_heading">Main Feed</h1>
 
       <% @posts.each do |post| %>
-          <p class="post_image_post_page" style="background-image: url('<%= post.photo.url %>'); background-size: cover; background-position: center; width: 600px; height: 600px; margin: 0px auto 10px auto;""></p>
+          <p style="background-image: url('<%= post.user.photo.url %>'); background-position: center; background-size: cover; width: 75px; height: 75px; border-radius: 50%; display: inline-block; margin-bottom: -10px;"></p><strong class="username_post_page"><%= post.user.username %></strong>
+          <p class="post_image_post_page" style="background-image: url('<%= post.photo.url %>'); background-size: cover; background-position: center; width: 700px; height: 700px; margin: 5px auto 10px auto;""></p>
           <div class="customize_post">
-            <td><%= link_to 'Show', post %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </div>
-          
-          <div class="username_message_post">
-          <p class="message_post_page"><%= post.user.username %>: <%= post.message %></p>
+            <td><%= link_to 'Post', post %></td>
+            <td><%= link_to 'Edit Post', edit_post_path(post) %></td>
+            <td><%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </div>
 
-          <div>
+          <div class="username_message_post">
+          <p class="message_post_page"><strong><%= post.message %></strong></p>
+          </div>
+
+          <div class="comments_post_page">
             <p class="comments_post_page_heading"><strong>Comments:</strong></p>
             <% post.comments.each do |comment| %>
-                <li><%= comment.user.username %>: <%= comment.message %></li>
+              <div class="photo_with_comment">
+                <span style="background-image: url('<%= comment.user.photo.url %>'); width: 30px; height: 30px; background-position: center; background-size: cover; display: inline-block; border-radius: 50%"></span>
+                <div class="userCommentName" style="font-weight: bold; width: inherit; display: inline-block; padding-left: 5px;"><%= comment.user.username %>: </div> 
+                <%= comment.message %>
+              </div>
             <% end %>
               <%= render 'comments/form', comment: Comment.new(post_id: post.id) %>
+              <br>
           </div>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          
       <% end %>
-
-  <br>
-
-  <%= link_to 'New Post', new_post_path %>
 </div>

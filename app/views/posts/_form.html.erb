@@ -13,17 +13,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :message %>
+  <div class="field" style="display: block; padding: 20px; text-align: center;">
+    <span style="display: block;"><%= form.label :message %></span>
     <%= form.text_field :message, id: :post_message %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: block; padding: 20px;">
     <%= form.label :photo %>
-    <%= form.file_field :photo, id: :post_photo %>
+    <span style="margin: 0px auto 0px auto;"><%= form.file_field :photo, id: :post_photo %></span>
   </div>
 
-  <div class="actions">
+  <div class="actions" >
     <%= form.submit %>
   </div>
 <% end %>
+
+
+
+
+

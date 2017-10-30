@@ -1,6 +1,15 @@
-<h1>Editing User</h1>
+<h1 class="edit_heading_page" style="text-align: center;">Edit Your Profile Here</h1>
+<div class="edit_profile_page">
+	<div class="edit_message_page">
+		<h5 class="h_fives">Not satisfied with your Username or Password</h5>
+		<h5 class="h_fives">Had a change of Position</h5>
+		<h5 class="h_fives">Or simply wanted to change your profile photo</h5>
+		<h5 class="h_fives">Just change it here.</h5>
+	</div>
 
-<%= render 'form', user: @user %>
+	<%= render 'form', user: @user %>
+</div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+	<%= link_to 'Show', @user %> |
+	<%= link_to 'Back', users_path %>
+
