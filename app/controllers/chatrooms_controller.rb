@@ -65,6 +65,10 @@ class ChatroomsController < ApplicationController
     end
   end
 
+    def action
+      render :layout => 'chatroom'
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chatroom
