@@ -1,20 +1,25 @@
-<h1>Search for Friends</h1>
-<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Friends" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+<div class="friendship_page" style="width: 700px; margin: auto; text-align: center;">
+	<div class="search_for_friends">
+		<h3>Search for Your Friends</h3>
+		<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+		    <%= text_field_tag :search, params[:search], placeholder: "Search Friends" %>
+		    <%= submit_tag "Search", :name => nil %>
+		<% end %>
+	</div>
 
-<p id="notice"><%= notice %></p>
+	<p id="notice"><%= notice %></p>
 
-<h1>Your Are Friends With</h1>
+	<h1>Your Are Friends With</h1>
 
-<% @friendships.each do |friendship| 
-	friend = friendship.reversable_friendship(current_user) %>
+	<% @friendships.each do |friendship| 
+		friend = friendship.reversable_friendship(current_user) %>
 
-	<li><%= link_to friend.full_name, friend%></li>
-	
-<% end %>
-
+	<div class="list_of_friends">
+		<li><%= link_to friend.full_name, friend%></li>
+	</div>
+		
+	<% end %>
+</div>
 
 
 

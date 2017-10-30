@@ -16,13 +16,12 @@
     <%= form.hidden_field :post_id, id: :comment_post_id %>
   </div>
 
-  <div class="field">
-    <%= form.label :comment %>
+  <div class="field" style="width: 160px; display: inline-block;">
     <%= form.text_field :message, id: :comment_message %>
   </div>
 
 
-  <div class="actions">
+  <div class="actions" style="width: 200px; display: inline-block;">
     <%= form.submit %>
   </div>
 <% end %>
