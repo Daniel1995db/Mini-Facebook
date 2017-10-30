@@ -13,6 +13,13 @@
     <div class="chatroom-wrapper">
       <div class="left-col-wrapper">
         <div class="left-content">    
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="fluid-container">
+      <div class="row">
+        <div class="col-sm-2"> 
           <% if user_signed_in? %>
           <h5>Your Chatrooms:</h5>
           <ul>
@@ -21,10 +28,13 @@
             <% end %>
           </ul>
           <% end %>
+<<<<<<< HEAD
         </div>
       </div>         
       <div class="right-col-wrapper">
         <%= yield %>
+=======
+>>>>>>> ca9d389f4ce6382dbbabcb0cd280c15e221566ca
       </div>
     </div>
   </body>
