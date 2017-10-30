@@ -21,6 +21,9 @@ class User < ApplicationRecord
 	has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
  	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
+  def friends
+    friendships.map{|friendship| friendship.reversable_friendship(self) }
+  end
 	def los_amigos
     	@user.amigos + ActiveRecord::Base.connection.select_all("SELECT a.* FROM user u JOIN friendship f ON u.id = f.amigo_id JOIN user a ON f.user_id = a.id")
   	end
