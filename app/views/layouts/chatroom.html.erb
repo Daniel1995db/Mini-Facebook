@@ -12,14 +12,7 @@
     <%= render partial: 'home/nav' %>
     <div class="chatroom-wrapper">
       <div class="left-col-wrapper">
-        <div class="left-content">    
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <div class="fluid-container">
-      <div class="row">
-        <div class="col-sm-2"> 
+        <div class="left-content">     
           <% if user_signed_in? %>
           <h5>Your Chatrooms:</h5>
           <ul>
@@ -32,7 +25,7 @@
       </div>         
       <div class="right-col-wrapper">
         <%= yield %>
+        </div>
       </div>
-    </div>
   </body>
 </html>
