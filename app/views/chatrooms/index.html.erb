@@ -13,7 +13,7 @@
         <td class="chatroom-name"><%= chatroom.name %></td>
         <td class="chatroom-links"><%= link_to 'Show', chatroom %></td>
         <td class="chatroom-links"><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-        <td class="chatroom-links"><%= link_to 'Destroy', chatroom, method: :delete %></td>
+        <td class="chatroom-links"><%= link_to 'Delete', chatroom, method: :delete %></td>
         <td class="chatroom-links"><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td>
         <td class="chatroom-links"><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
       </tr>
