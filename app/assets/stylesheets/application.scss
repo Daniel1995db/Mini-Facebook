@@ -16,3 +16,22 @@
 
  @import "bootstrap";
  @import "bootstrap-sprockets";
+
+
+$paper: #D5D5D5;
+$overcast: #9099A2;
+$dusty: #96858f;
+$lavender: #6D7993;
+
+ body{
+
+
+  #notice{
+    position: absolute;
+  }
+
+  a {
+    color: white;
+    z-index: 1;
+  }
+ }

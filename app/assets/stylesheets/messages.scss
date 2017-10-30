@@ -1,0 +1,89 @@
+$dusty: #96858f;
+$lavender: #6D7993;
+$overcast: #9099A2;
+$paper: #D5D5D5;
+
+//----------NEW CHATROOM-------//
+
+.new-chatroom-wrapper{
+
+  h1 {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  form{
+    margin-top: 100px;
+  }
+
+  .form-control{
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .actions{
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+//----------CHATROOM SHOW/MESSAGES------//
+.chatroom-show-container {
+  width: 900px;
+  margin: 0 auto;
+  background-color: $dusty;
+  border-radius: 70px;
+
+
+  .chatroom-name{
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .chatroom-messages {
+    margin-top: 40px;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .message-container {
+    border: 1px solid black;
+    border-radius: 100px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+
+  .chatroom-username {
+    font-size: 20px;
+    position: relative;
+    left: 140px;
+    top: 47px;
+  }
+
+  .new_message {
+    text-align: center;
+  }
+
+  input#message_body {
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 60px;
+    font-size: 20px;
+    outline: none;
+  }
+}
+
+.back-button {
+        position: absolute;
+    left: 1300px;
+    bottom: 785px;
+    font-size: 30px;
+  }

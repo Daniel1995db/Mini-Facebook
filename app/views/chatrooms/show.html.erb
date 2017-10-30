@@ -1,18 +1,29 @@
-<p id="notice"><%= notice %></p>
 
 
+<div class="chatroom-show-container">
+  <p>
+    <strong>Name:</strong>
+    <%= @chatroom.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chatroom.name %>
-</p>
 
-<div data-behavior="messages">
-  <% @messages.each do |message| %>
-    <%= render message %>
+  <div class="chatroom-name-wrapper">
+    <p>
+      <h2 class="chatroom-name"><%= @chatroom.name %></h2>
+    </p>
+  </div>
+
+  <div class="chatroom-messages" data-behavior="messages">
+    <% @messages.each do |message| %>
+      <%= render message %>
+    <% end %>
+  </div>     
+
+  <%= form_for [@chatroom, Message.new], remote: true do |f| %>
+    <%= f.text_field :body, rows: 1, autofocus: true %>
   <% end %>
-</div>     
+</div>
 
-<%= form_for [@chatroom, Message.new], remote: true do |f| %>
-  <%= f.text_field :body, rows: 1, autofocus: true %>
-<% end %>
+<div class="back-button">
+    <%= link_to 'Back', chatrooms_path %>
+  </div>

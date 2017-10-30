@@ -1,14 +1,18 @@
 
-<div class="navbar">
+<header class="layout-nav">
+  <h1>Los Amigos</h1>
+  <i class="fa fa-bars fa-2x nav-toggle" aria-hidden="true"></i>
+  <nav class="main-navigation">
   <% if user_signed_in? %>
-  	<li><%= link_to  'News Feed', posts_path %></li>
-  	<li><%= link_to  'Group Chats', chatrooms_path %></li>
-  	<li><%= link_to 'Friends',  user_friendships_path(current_user) %></li>
-  	<li><%= link_to 'Profile Page', user_path(current_user) %></li>
-  	<li><%= link_to  'Edit Account', edit_user_registration_path %></li>
+    <li><%= link_to  'News Feed', posts_path %></li>
+    <li><%= link_to  'Group Chats', chatrooms_path %></li>
+    <li><%= link_to 'Friends',  user_friendships_path(current_user) %></li>
+    <li><%= link_to 'Profile Page', user_path(current_user) %></li>
+    <li><%= link_to  'Edit Account', edit_user_registration_path %></li>
     <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
   <% else %>
-  <li><%= link_to('Login', new_user_session_path)  %></li>
+    <li><%= link_to('Login', new_user_session_path)  %></li>
   <% end %>
-</div>
+  </nav>
+</header>
 

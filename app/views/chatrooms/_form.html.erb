@@ -10,13 +10,15 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="form-group">
+      <%= form.text_field :name, id: :chatroom_name, class: 'form-control', placeholder: 'Chatroom Name' %>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :chatroom_name %>
+    <div class="actions">
+      <%= form.submit "Start Chatting", class: "btn btn-primary btn-block btn-lg" %>
+    </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
