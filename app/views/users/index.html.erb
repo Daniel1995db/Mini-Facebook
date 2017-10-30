@@ -23,7 +23,7 @@
           <td><%= image_tag user.photo.url(:medium) %></td>
           <td><%= user.position %></td>
           <td><%= link_to 'Show', user %></td>  
-          <% if Friendship.find_by( user_id: @current_user_id, amigo_id: user.id) %>
+          <% unless Friendship.find_by( user_id: current_user.id, amigo_id: user.id) %>
           <td><%= link_to 'Add Friend', user_friendships_path(user), method: :post %></td>
           <% end %>
           <% if user == current_user %>
