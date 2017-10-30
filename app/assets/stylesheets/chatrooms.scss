@@ -1,3 +1,102 @@
 // Place all the styles related to the Chatrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font: 'Averia Serif Libre', cursive;
+$dusty: #96858f;
+$lavender: #6D7993;
+$overcast: #9099A2;
+$paper: #D5D5D5;
+
+.chatroom-wrapper{
+  display: flex;
+
+  .left-col-wrapper {
+    flex: 1;
+    background-color: $lavender;
+    height: 800px;
+    max-height: 900px;
+
+    .left-content {
+      font-family: $font;
+
+      h5 {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        padding-top: 20px;
+      }
+
+      ul {
+
+        li {
+          list-style: none;
+          padding-top: 20px;
+
+          a {
+          font-size: 20px;
+          color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .right-col-wrapper {
+    flex: 3;    
+    background-image: url(/assets/background/mountains.jpg);
+    background-size: cover;
+    table {
+      background-color: rgba(109, 121, 147, 0.7);
+      width: 600px;
+      margin: 30px auto;
+      border-radius: 10px;
+
+      thead {
+        font-size: 40px;
+        text-align: center;
+        padding: 10px;
+
+        th {
+          text-align: center;
+        }
+      }
+
+      tbody {
+        margin-top: 20px;
+        padding: 10px;
+
+        tr {
+          border-bottom: 4px solid grey;
+
+          .chatroom-name {
+            font-size: 20px;
+            text-transform: uppercase;
+          }
+          
+          td {
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.new-chatroom-wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+
+//----------EDITING CHATROOM-----------//
+ #edit-chatroom {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+ }
+
+ .edit-chatroom-buttons {
+  margin-top: 10px;
+  text-align: center;
+  color: $lavender;
+ }
