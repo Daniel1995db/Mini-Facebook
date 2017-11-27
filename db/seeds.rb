@@ -17,7 +17,6 @@ Comment.create([
 ])
 Group.create!([
 	{id: 1, groupname: '1st group'},
-	{id: 2, groupname: '2nd group'}
 ])
 
 
