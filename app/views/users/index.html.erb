@@ -1,40 +1,24 @@
 <% if @users.present? %>  
-  <h1>Users</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Fname</th>
-        <th>Lname</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Photo</th>
-        <th>Position</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <h1 class="heading_user_page">Users</h1>
 
-    <tbody>
       <% @users.each do |user| %>
-        <tr>
-          <td><%= user.fname %></td>
-          <td><%= user.lname %></td>
-          <td><%= user.username %></td>
-          <td><%= user.password %></td>
-          <td><%= image_tag user.photo.url(:medium) %></td>
-          <td><%= user.position %></td>
-          <td><%= link_to 'Show', user %></td>  
-          <% unless Friendship.find_by( user_id: current_user.id, amigo_id: user.id) %>
-          <td><%= link_to 'Add Friend', user_friendships_path(user), method: :post %></td>
+      <div class="users_user_page">
+          <li><%= user.fname %></li>
+          <li><%= user.lname %></li>
+          <li><%= user.username %></li>
+          <li><%= user.password %></li>
+          <li><%= image_tag user.photo.url(:medium) %></li>
+          <li><%= user.position %></li>
+          <li><%= link_to 'Show', user %> </li>
+          <% if Friendship.find_by( user_id: @current_user_id, amigo_id: user.id) %>
+            <li><%= link_to 'Add Friend', user_friendships_path(user), method: :post %></li>
           <% end %>
           <% if user == current_user %>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <li><%= link_to 'Edit', edit_user_path(user) %></li>
+            <li><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table> 
-
+      </div>
+<% end %>
 
 <% else %>
   <h1>There are no users containing the term(s) <%= params[:search] %>.</h1>
